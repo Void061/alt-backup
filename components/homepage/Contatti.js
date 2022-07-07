@@ -47,19 +47,11 @@ export default function Contatti(props) {
   };
 
   return (
-    <div id="contact" className={`${props.css}`}>
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-5 gap-14 py-[150px] md:pt-[250px] md:pb-[100px]">
-        <div className="col-span-1 md:col-span-2 h-full flex items-center">
-          <div className="container"><h5 className="light-blue font-medium pb-3 h-full">Professionisti al tuo servizio</h5>
-            <h2 className="pb-3 text-white text-[40px] md:text-[50px]">Vuoi parlarci <br /> di un <span className="light-blue">progetto</span>?</h2>
-            <p className="pb-3 text-white">Che tu voglia ripensare la tua impresa o avviarne una nuova, compila i dati qui di fianco ed entra in contatto con noi! <br /> <br />Saremo lieti di collaborare e trasformare insieme la tua idea in realtà!
-            </p>
-            <div>
-
-            </div></div>
-        </div>
-        <div className="col-span-1 md:col-span-3 h-full">
-          <div className="rounded-[50px] bg-white py-[70px] px-[40px] md:px-[80px] shadow-xl h-full"><h3 className="pb-5">Contatti</h3>
+    <div id="contact" className={`${props.css} bg-slide-img bg-cover`}>
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-2 pt-[120px] pb-[220px] mb-[100px]">
+        <div className="col-span-1 md:col-span-2 h-full relative">
+          <div className="absolute w-full">
+          <div className="rounded-[25px] bg-white py-[70px] px-[40px] md:px-[80px] shadow-xl h-full"><h3 className="pb-5">Contatti</h3>
             <form className="w-full" onSubmit={handleSubmit(handleRegistration, handleError)}>
               <div className="flex flex-wrap -mx-3 mb-6">
                 <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
@@ -114,11 +106,21 @@ export default function Contatti(props) {
               <div className="flex flex-wrap -mx-3 mb-3 mt-5">
                 <div className="w-full px-3 mb-6 md:mb-0">
                   <div className="relative">
-                    <input type="submit" className="button btn-dark w-full" value="Invia messaggio" />
+                    <input type="submit" className="button bg-primary text-white w-full" value="Invia messaggio" />
                   </div>
                 </div>
               </div>
             </form>
+          </div>
+          </div>
+        </div>
+        <div className="col-span-1 md:col-span-1 h-full flex items-start">
+          <div className="container">
+            <h2 className="pb-3 text-white text-[40px] md:text-[50px]">Vuoi parlarci <br /> di un <span className="light-blue">progetto</span>?</h2>
+            <p className="pb-3 text-white">Che tu voglia ripensare la tua impresa o avviarne una nuova, compila i dati qui di fianco ed entra in contatto con noi! <br /> <br />Saremo lieti di collaborare e trasformare insieme la tua idea in realtà!
+            </p>
+            <div>
+            </div>
           </div>
         </div>
       </div>
