@@ -17,10 +17,10 @@ export default function Footer() {
                             <Link legacyBehavior href="https://www.facebook.com/altera.consulting">
                                 <a className="pr-3 pl-3 md:pl-0 md:pr-5"><img src="/images/facebook.png" /></a>
                             </Link>
-                            <Link legacyBehavior href="https://www.facebook.com/altera.consulting">
+                            <Link legacyBehavior href="https://www.instagram.com/altera_consulting/">
                                 <a className="pr-3 pl-3 md:pl-0 md:pr-5"><img src="/images/instagram.png" /></a>
                             </Link>
-                            <Link legacyBehavior href="https://www.facebook.com/altera.consulting">
+                            <Link legacyBehavior href="https://www.linkedin.com/company/altera-consulting-company/">
                                 <a className="pr-3 pl-3 md:pl-0 md:pr-5"><img src="/images/linkedin.png" /></a>
                             </Link>
                         </div>
