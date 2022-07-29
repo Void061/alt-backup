@@ -1,6 +1,6 @@
 import Router from "next/router"
 import { useEffect } from "react"
-export default function cat_all(){
+export default function Cat_all(){
 
 
 

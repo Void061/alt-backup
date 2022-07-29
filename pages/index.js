@@ -11,29 +11,29 @@ import StrapiClient from "../lib/strapi-client";
 import Head from "next/head";
 
 export default function Home(props) {
-   return (
+    return (
         <div>
             <Head>
-            <title>Altera</title>
-            <meta name="description" content="Società di servizi e consulenza" />
+                <title>Altera</title>
+                <meta name="description" content="Società di servizi e consulenza" />
             </Head>
             <Header Home={true} position="fixed" />
             <SlideInit />
-            <div id="about" className="container pt-[140px]">
-                <TitleAndSubtitle titolo_normal="Hub per lo sviluppo " titolo_light="e <br /> condivisione di valori" sottotitolo="Altera è un Hub per lo sviluppo e condivisione di valori, sentimenti, obiettivi e azioni orientate al miglioramento della nostra comunità del Golfo di Gaeta." />
+            <div id="about" className="container pt-[100px] md:pt-[140px]">
+                <TitleAndSubtitle titolo_normal="Hub per lo sviluppo " titolo_light="e <br /> condivisione di valori" sottotitolo="Altera è un Hub per lo sviluppo e condivisione di valori, obiettivi e azioni orientate al miglioramento della comunità del Golfo di Gaeta." />
                 <Divider />
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
                     <div>
-                        <Card type="simple" icon="plus" iconClass="w-[60px] h-[60px] fill-secundary hover:fill-primary duration-200" titolo="Consulenza strategica" sottotitolo="Costruiamo e sviluppiamo business valutando la fattibilità degli investimenti" />
+                        <Card type="simple" icon="lux" iconClass="w-[60px] h-[60px] fill-secundary hover:fill-primary duration-200" titolo="Aggreghiamo le idee" sottotitolo="Rileviamo le istanze dei giovani del territorio per affrontare l’appiattimento culturale e sociale." img="prova3" />
                     </div>
                     <div>
-                        <Card type="simple" icon="doc" iconClass="w-[60px] h-[60px] fill-secundary hover:fill-primary duration-200" titolo="Finanza agevolata" sottotitolo="Ricerchiamo agevolazioni per la nascita e lo sviluppo delle imprese" img="prova2" />
+                        <Card type="simple" icon="plus" iconClass="w-[60px] h-[60px] fill-secundary hover:fill-primary duration-200" titolo="Creiamo e sviluppiamo le imprese" sottotitolo="Supportiamo le imprese e gli aspiranti imprenditori nella realizzazione degli investimenti e nel posizionamento di mercato"/>
                     </div>
                     <div>
-                        <Card type="simple" icon="lux" iconClass="w-[60px] h-[60px] fill-secundary hover:fill-primary duration-200" titolo="Marketing e comunicazione" sottotitolo="Sviluppiamo la Brand Identity e miglioriamo il posizionamento sul mercato" img="prova3" />
+                        <Card type="simple" icon="doc" iconClass="w-[60px] h-[60px] fill-secundary hover:fill-primary duration-200" titolo="Facilitiamo le relazioni" sottotitolo="Interloquiamo con le istituzioni e gli operatori economici per facilitare partnership vincenti" img="prova2" />
                     </div>
                     <div >
-                        <Card type="simple" icon="aereo" iconClass="w-[60px] h-[60px] fill-secundary hover:fill-primary duration-200" titolo="Technology Development" sottotitolo="Progettiamo siti web, software gestionali, e soluzioni innovative Web 3.0" img="prova4" />
+                        <Card type="simple" icon="aereo" iconClass="w-[60px] h-[60px] fill-secundary hover:fill-primary duration-200" titolo="Alteriamo la reatà" sottotitolo="Valorizziamo le idee generando nuove realtà capaci di alterare il territorio aumentandone le capabilities" img="prova4" />
                     </div>
                 </div>
             </div>
@@ -41,19 +41,20 @@ export default function Home(props) {
                 <div className="absolute bg-[#1E4589] h-[100px] w-full top-0 opacity-40">
                 </div>
                 <div className="container pt-[200px] pb-[100px]">
-                    <div class="grid grid-cols-3">
+                    <div className="grid grid-cols-1 md:grid-cols-3">
                         <div className="col-span-1">
-                            <h2 className="text-white">Il nostro Team lorem ipsum sit docet sunto es</h2>
+                            <h2 className="text-white mb-5 md:mb-0">Il nostro Team <br /> di professionisti</h2>
                         </div>
-                        <div className="col-span-2 grid grid-cols-2">
-                            <div className="col-span-1">
-                                Offriamo una consulenza trasversale per l'avvio, lo sviluppo e la diversificazione d'impresa. Supportiamo imprenditori e aspiranti tali nel loro percorso verso
+                        <div className="col-span-2 md:grid md:grid-cols-2 gap-5">
+                            <div className="md:col-span-1">
+                                Altera nasce dalla visione condivisa delle nuove generazioni di professionisti del Golfo. <br />
+                                Per conseguire una reale realizzazione comunitaria è necessario un approccio integrato alla risoluzione di problemi complessi.
                             </div>
-                            <div className="col-span-1">
-                                Offriamo una consulenza trasversale per l'avvio, lo sviluppo e la diversificazione d'impresa. Supportiamo imprenditori e aspiranti tali nel loro percorso verso
-                            </div>
+                            <div className="md:col-span-1">
+                             Integrando le proprie competenze, il team di Altera offre un supporto trasversale, finalizzato al rafforzamento del tessuto socioeconomico e culturale locale.
+                             </div>
                             <div className="col-span-2">
-                                
+
                             </div>
                         </div>
                     </div>
@@ -79,7 +80,7 @@ export default function Home(props) {
                 </div>
             </div>
             <Contatti />
-            <div className="py-[100px]">
+            <div className="hidden py-[100px]">
                 <TitleAndSubtitle titolo_normal="News & " titolo_light="Update" sottotitolo="Contributi e finanziamenti, consigli di marketing e tutto ciò che devi sapere per migliorare la tua impresa. <br /> Selezioniamo news e contenuti che contano davvero per aiutarti a sfruttare le ultime opportunità!" />
                 <div className="pb-10">
                     <Divider />
@@ -87,7 +88,7 @@ export default function Home(props) {
                 <div className="container mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"> {
 
-                        props.news.data?.map((article, index) => (
+                        props.news?.data?.map((article, index) => (
 
                             <>
 
@@ -110,8 +111,7 @@ export default function Home(props) {
 
 
 
-
-export const getStaticProps = async () => {
+const getStaticProps = async () => {
     const allNews = await fetch(process.env.STRAPI_API_URL + "articoli?populate=utente.avatar&sort[0]=publishedAt:desc&pagination[pageSize]=6").then(r => r.json())
     const BASE_URL = process.env.BASE_URL;
     return {

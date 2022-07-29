@@ -16,26 +16,36 @@ function MobileNav({ open, setOpen }) {
             className={`md:hidden absolute top-0 left-0 h-screen w-screen bg-white transform ${open ? "-translate-x-0" : "-translate-x-full"
                 } transition-transform duration-300 ease-in-out filter drop-shadow-md `}
         >
-            <div className="flex items-center justify-center filter drop-shadow-md bg-white h-20">
+            <div className="flex items-center justify-start px-5 filter drop-shadow-md bg-white h-20">
                 {" "}
                 {/*logo container*/}
                 <Link legacyBehavior className="text-xl" href="/">
-                    ALTERA
+                <a className={`text-2xl md:text-[35px] font-bold `}><img src="/images/logo.png" width="150px" /></a>
                 </Link>
             </div>
-            <div className="flex flex-col ml-4 pt-5 text-[25px]">
+            <div className="flex text-[#001d4f] flex-col ml-4 pt-5 text-[25px]">
                 <Link legacyBehavior
-                    href="/about"
+                    href="#about"
 
                 >
                     <span onClick={() =>
                         setTimeout(() => {
                             setOpen(!open);
                         }, 100)
-                    }>About</span>
+                    }>Chi siamo</span>
                 </Link>
                 <Link legacyBehavior
-                    href="/contact"
+                    href="#services"
+
+                >
+                    <span onClick={() =>
+                        setTimeout(() => {
+                            setOpen(!open);
+                        }, 100)
+                    }>Servizi</span>
+                </Link>
+                <Link legacyBehavior
+                    href="#contact"
 
                 >
                     <span onClick={() =>
