@@ -11,9 +11,9 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className="col-span-1 flex flex-row justify-center  pb-10 md:pb-0">
-                    <div className="flex flex-col items-start ">
-                        <h5 class="text-white mb-5">Social Network</h5>
-                        <div class="flex flex-row">
+                    <div className="flex flex-col items-center md:items-start">
+                        <h5 className="text-white mb-5">Social Network</h5>
+                        <div className="flex flex-row">
                             <Link legacyBehavior href="https://www.facebook.com/altera.consulting">
                                 <a className="pr-3 pl-3 md:pl-0 md:pr-5"><img src="/images/facebook.png" /></a>
                             </Link>
@@ -27,9 +27,9 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className="col-span-1 flex flex-row justify-center  pb-10 md:pb-0">
-                    <div className="flex flex-col items-start ">
-                        <h5 class="text-white mb-5">Link utili</h5>
-                        <div class="flex flex-col">
+                    <div className="flex flex-col items-center md:items-start">
+                        <h5 className="text-white mb-5">Link utili</h5>
+                        <div className="flex flex-col">
                             <Link legacyBehavior href="/privacy-policy">
                                 <a className="text-white pr-3 pl-3 md:pl-0 md:pr-5">Privacy Policy</a>
                             </Link>
@@ -40,8 +40,8 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className="col-span-1 flex flex-row justify-center pb-10 md:pb-0">
-                    <div className="flex flex-col items-start">
-                    <h5 class="text-white mb-5">Info e Contatti</h5>
+                    <div className="flex flex-col items-center md:items-start">
+                    <h5 className="text-white mb-5">Info e Contatti</h5>
                         <p className="text-white font-[400]"><b>Email:</b> info@altera.consulting</p>
                     
                     </div>

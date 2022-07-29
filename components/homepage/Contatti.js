@@ -47,74 +47,74 @@ export default function Contatti(props) {
   };
 
   return (
-    <div id="contact" className={`${props.css} bg-slide-img bg-cover`}>
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-2 pt-[120px] pb-[220px] mb-[100px]">
-        <div className="col-span-1 md:col-span-2 h-full relative">
-          <div className="absolute w-full">
-          <div className="rounded-[25px] bg-white py-[70px] px-[40px] md:px-[80px] shadow-xl h-full"><h3 className="pb-5">Contatti</h3>
-            <form className="w-full" onSubmit={handleSubmit(handleRegistration, handleError)}>
-              <div className="flex flex-wrap -mx-3 mb-6">
-                <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                  <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-                    Nome
-                  </label>
-                  <input className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded-[10px] py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" {...register('nome', registerOptions.nome)} />
-                  <p className="text-red-500 text-xs italic">{errors?.nome && errors.nome.message}</p>
+    <div id="contact" className={`${props.css} bg-slide-img bg-cover mb-[200px]`}>
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-2 pt-[120px] pb-[100px] md:pb-[220px] mb-[100px]">
+        <div className="col-span-1 md:col-span-2 h-full order-2 md:order-1 relative">
+          <div className="md:absolute w-full">
+            <div className="rounded-[25px] bg-white py-[70px] px-[40px] md:px-[80px] shadow-xl h-full"><h3 className="pb-5">Contatti</h3>
+              <form className="w-full" onSubmit={handleSubmit(handleRegistration, handleError)}>
+                <div className="flex flex-wrap -mx-3 mb-6">
+                  <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                      Nome
+                    </label>
+                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded-[10px] py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" {...register('nome', registerOptions.nome)} />
+                    <p className="text-red-500 text-xs italic">{errors?.nome && errors.nome.message}</p>
+                  </div>
+                  <div className="w-full md:w-1/2 px-3">
+                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
+                      Cognome
+                    </label>
+                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded-[10px] py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text"  {...register('cognome', registerOptions.cognome)} />
+                    <p className="text-red-500 text-xs italic">{errors?.cognome && errors.cognome.message}</p>
+                  </div>
                 </div>
-                <div className="w-full md:w-1/2 px-3">
-                  <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
-                    Cognome
-                  </label>
-                  <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded-[10px] py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text"  {...register('cognome', registerOptions.cognome)} />
-                  <p className="text-red-500 text-xs italic">{errors?.cognome && errors.cognome.message}</p>
-                </div>
-              </div>
-              <div className="flex flex-wrap -mx-3 mb-6">
-                <div className="w-full md:w-1/2 px-3">
-                  <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-                    Email
-                  </label>
-                  <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded-[10px] py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="email" {...register('email', registerOptions.email)} />
-                  <p className="text-red-500 text-xs italic">{errors?.email && errors.email.message}</p>
-                </div>
-                <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                  <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
-                    Oggetto
-                  </label>
-                  <div className="relative">
-                    <select className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded-[10px] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  {...register('oggetto', { required: false })}>
-                      <option>Informazioni</option>
-                      <option>Altro</option>
-                    </select>
-                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                      <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
+                <div className="flex flex-wrap -mx-3 mb-6">
+                  <div className="w-full md:w-1/2 px-3">
+                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                      Email
+                    </label>
+                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded-[10px] py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="email" {...register('email', registerOptions.email)} />
+                    <p className="text-red-500 text-xs italic">{errors?.email && errors.email.message}</p>
+                  </div>
+                  <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
+                      Oggetto
+                    </label>
+                    <div className="relative">
+                      <select className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded-[10px] leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  {...register('oggetto', { required: false })}>
+                        <option>Informazioni</option>
+                        <option>Altro</option>
+                      </select>
+                      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                        <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="flex flex-wrap -mx-3 mb-6">
-                <div className="w-full px-3 mb-6 md:mb-0">
-                  <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"  >
-                    Messaggio
-                  </label>
-                  <div className="relative">
-                    <textarea className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded-[10px] py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" {...register('messaggio')}>
-                    </textarea>
+                <div className="flex flex-wrap -mx-3 mb-6">
+                  <div className="w-full px-3 mb-6 md:mb-0">
+                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"  >
+                      Messaggio
+                    </label>
+                    <div className="relative">
+                      <textarea className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded-[10px] py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" {...register('messaggio')}>
+                      </textarea>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="flex flex-wrap -mx-3 mb-3 mt-5">
-                <div className="w-full px-3 mb-6 md:mb-0">
-                  <div className="relative">
-                    <input type="submit" className="button bg-primary text-white w-full" value="Invia messaggio" />
+                <div className="flex flex-wrap -mx-3 mb-3 mt-5">
+                  <div className="w-full px-3 mb-6 md:mb-0">
+                    <div className="relative">
+                      <input type="submit" className="button bg-primary text-white w-full" value="Invia messaggio" />
+                    </div>
                   </div>
                 </div>
-              </div>
-            </form>
-          </div>
+              </form>
+            </div>
           </div>
         </div>
-        <div className="col-span-1 md:col-span-1 h-full flex items-start">
+        <div className="col-span-1 order-1 md:order-2 md:col-span-1 h-full flex items-start">
           <div className="container">
             <h2 className="pb-3 text-white text-[40px] md:text-[50px]">Vuoi parlarci <br /> di un <span className="light-blue">progetto</span>?</h2>
             <p className="pb-3 text-white">Che tu voglia ripensare la tua impresa o avviarne una nuova, compila i dati qui di fianco ed entra in contatto con noi! <br /> <br />Saremo lieti di collaborare e trasformare insieme la tua idea in realtà!
