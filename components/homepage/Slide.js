@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { MinEquation } from "three";
 import MappaGolfo from "../mappaGolfo/mappaGolfo";
 
 

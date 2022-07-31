@@ -7,10 +7,10 @@ import TitleAndSubtitle from "../components/base/TitleAndSubtitle";
 import NewsCard from "../components/base/NewsCard";
 import Divider from "../components/base/Divider";
 import Footer from "../components/base/Footer";
-import StrapiClient from "../lib/strapi-client";
 import Head from "next/head";
 
 export default function Home(props) {
+    console.log(props.news, process.env.NEXT_PUBLIC_API_URL)
     return (
         <div>
             <Head>
@@ -87,8 +87,9 @@ export default function Home(props) {
                 </div>
                 <div className="container mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"> {
-
+                        
                         props.news?.data?.map((article, index) => (
+
 
                             <>
 
@@ -111,8 +112,9 @@ export default function Home(props) {
 
 
 
-const getStaticProps = async () => {
-    const allNews = await fetch(process.env.STRAPI_API_URL + "articoli?populate=utente.avatar&sort[0]=publishedAt:desc&pagination[pageSize]=6").then(r => r.json())
+export const getStaticProps = async () => {
+
+    const allNews = await fetch('https://admin.altera.consulting/wp-json/wp/v2/posts').then(r => r.json())
     const BASE_URL = process.env.BASE_URL;
     return {
         props: {
