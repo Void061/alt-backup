@@ -111,8 +111,7 @@ export default function Header(props) {
                         {props.Home ? <NavLink to="#about">Chi siamo</NavLink> : <NavLink to="/#about">Chi siamo</NavLink>}
                         {props.Home ? <NavLink to="#services">Servizi</NavLink> : <NavLink to="/#services">Servizi</NavLink>}
                         <NavLink to="/category">Blog</NavLink>
-                        {props.Home ? <NavLink to="#contact" className="duration-200 border border-white hover:bg-white hover:text-primary py-[20px] ml-[30px] px-[40px] rounded-[10px]">Contattaci</NavLink> : <NavLink to="/#contact">Contattaci</NavLink>}
-
+                        {props.Home ? <NavLink to="#contact" className="duration-200 border border-white hover:bg-white hover:text-primary py-[15px] ml-[30px] px-[25px] rounded-[10px]">Contattaci</NavLink> : <NavLink to="/#contact">Contattaci</NavLink>}
                     </div>
                 </div>
             </div>

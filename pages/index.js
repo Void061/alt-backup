@@ -27,7 +27,7 @@ export default function Home(props) {
                         <Card type="simple" icon="lux" iconClass="w-[60px] h-[60px] fill-secundary hover:fill-primary duration-200" titolo="Aggreghiamo le idee" sottotitolo="Rileviamo le istanze dei giovani del territorio per affrontare l’appiattimento culturale e sociale." img="prova3" />
                     </div>
                     <div>
-                        <Card type="simple" icon="plus" iconClass="w-[60px] h-[60px] fill-secundary hover:fill-primary duration-200" titolo="Creiamo e sviluppiamo le imprese" sottotitolo="Supportiamo le imprese e gli aspiranti imprenditori nella realizzazione degli investimenti e nel posizionamento di mercato"/>
+                        <Card type="simple" icon="plus" iconClass="w-[60px] h-[60px] fill-secundary hover:fill-primary duration-200" titolo="Creiamo e sviluppiamo le imprese" sottotitolo="Supportiamo le imprese e gli aspiranti imprenditori nella realizzazione degli investimenti e nel posizionamento di mercato" />
                     </div>
                     <div>
                         <Card type="simple" icon="doc" iconClass="w-[60px] h-[60px] fill-secundary hover:fill-primary duration-200" titolo="Facilitiamo le relazioni" sottotitolo="Interloquiamo con le istituzioni e gli operatori economici per facilitare partnership vincenti" img="prova2" />
@@ -51,8 +51,8 @@ export default function Home(props) {
                                 Per conseguire una reale realizzazione comunitaria è necessario un approccio integrato alla risoluzione di problemi complessi.
                             </div>
                             <div className="md:col-span-1">
-                             Integrando le proprie competenze, il team di Altera offre un supporto trasversale, finalizzato al rafforzamento del tessuto socioeconomico e culturale locale.
-                             </div>
+                                Integrando le proprie competenze, il team di Altera offre un supporto trasversale, finalizzato al rafforzamento del tessuto socioeconomico e culturale locale.
+                            </div>
                             <div className="col-span-2">
 
                             </div>
@@ -80,24 +80,17 @@ export default function Home(props) {
                 </div>
             </div>
             <Contatti />
-            <div className="hidden py-[100px]">
+            <div className="py-[100px]">
                 <TitleAndSubtitle titolo_normal="News & " titolo_light="Update" sottotitolo="Contributi e finanziamenti, consigli di marketing e tutto ciò che devi sapere per migliorare la tua impresa. <br /> Selezioniamo news e contenuti che contano davvero per aiutarti a sfruttare le ultime opportunità!" />
                 <div className="pb-10">
                     <Divider />
                 </div>
                 <div className="container mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"> {
-                        
-                        props.news?.data?.map((article, index) => (
 
-
+                        props.news.map((article, index) => (
                             <>
-
-                                {article.attributes.utente.data == null || article.attributes.utente.data == undefined ?
-                                    null
-                                    : <NewsCard id={article.id} baseurl={props.BASE_URL} key={index} titolo={article.attributes.titolo} sottotitolo={article.attributes.content} img={"/images/prova3.png"} data={article.attributes.updatedAt} autore={article.attributes.utente.data.attributes.username} avatar={article.attributes.utente.data.attributes.avatar.data.attributes.url} />
-                                }
-
+                                <NewsCard id={article.id} key={index} titolo={article.title.rendered} sottotitolo={article.excerpt.rendered} img={article.featured_image_src} data={article.date} />
                             </>
                         ))
                     }
@@ -114,12 +107,10 @@ export default function Home(props) {
 
 export const getStaticProps = async () => {
 
-    const allNews = await fetch('https://admin.altera.consulting/wp-json/wp/v2/posts').then(r => r.json())
-    const BASE_URL = process.env.BASE_URL;
+    const allNews = await fetch(process.env.NEXT_PUBLIC_API_URL + '/posts').then(r => r.json())
     return {
         props: {
             news: allNews,
-            BASE_URL: BASE_URL
         }
     }
 }
