@@ -7,7 +7,9 @@ export default function Footer() {
             <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 pt-[100px] md:pt-[100px]">
                 <div className="col-span-1 flex flex-row justify-center items-center pb-10 md:pb-0">
                     <div className="">
-                        <img src="/images/logo-white.png" width="200px" />
+                        <picture>
+                          <img src="/images/logo-white.png" width="200px" />
+                        </picture>
                     </div>
                 </div>
                 <div className="col-span-1 flex flex-row justify-center  pb-10 md:pb-0">
@@ -15,13 +17,17 @@ export default function Footer() {
                         <h5 className="text-white mb-5">Social Network</h5>
                         <div className="flex flex-row">
                             <Link legacyBehavior href="https://www.facebook.com/altera.consulting">
-                                <a className="pr-3 pl-3 md:pl-0 md:pr-5"><img src="/images/facebook.png" /></a>
+                                <a className="pr-3 pl-3 md:pl-0 md:pr-5">
+                                  <picture>
+                                    <img src="/images/facebook.png" />
+                                  </picture>
+                                </a>
                             </Link>
                             <Link legacyBehavior href="https://www.instagram.com/altera_consulting/">
-                                <a className="pr-3 pl-3 md:pl-0 md:pr-5"><img src="/images/instagram.png" /></a>
+                                <a className="pr-3 pl-3 md:pl-0 md:pr-5"><picture><img src="/images/instagram.png" /></picture></a>
                             </Link>
                             <Link legacyBehavior href="https://www.linkedin.com/company/altera-consulting-company/">
-                                <a className="pr-3 pl-3 md:pl-0 md:pr-5"><img src="/images/linkedin.png" /></a>
+                                <a className="pr-3 pl-3 md:pl-0 md:pr-5"><picture><img src="/images/linkedin.png" /></picture></a>
                             </Link>
                         </div>
                     </div>

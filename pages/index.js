@@ -8,35 +8,49 @@ import NewsCard from "../components/base/NewsCard";
 import Divider from "../components/base/Divider";
 import Footer from "../components/base/Footer";
 import Head from "next/head";
+import { getPosts } from '../utils/wordpress';
+import { useState, useEffect } from "react";
 
 export default function Home(props) {
-    console.log(props.news, process.env.NEXT_PUBLIC_API_URL)
+  const [news, setNews] = useState([])
+  const [isLoading, setLoading] = useState(false)
+
+  useEffect( () => {
+    setLoading(true)
+    getPosts().then( news => setNews(news));
+    
+  }, [ ])
+
     return (
         <div>
+            
             <Head>
                 <title>Altera</title>
                 <meta name="description" content="Società di servizi e consulenza" />
             </Head>
+
             <Header Home={true} position="fixed" />
             <SlideInit />
+
             <div id="about" className="container pt-[100px] md:pt-[140px]">
                 <TitleAndSubtitle titolo_normal="Hub per lo sviluppo " titolo_light="e <br /> condivisione di valori" sottotitolo="Altera è un Hub per lo sviluppo e condivisione di valori, obiettivi e azioni orientate al miglioramento della comunità del Golfo di Gaeta." />
                 <Divider />
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
                     <div>
-                        <Card type="simple" icon="lux" iconClass="w-[60px] h-[60px] fill-secundary hover:fill-primary duration-200" titolo="Aggreghiamo le idee" sottotitolo="Rileviamo le istanze dei giovani del territorio per affrontare l’appiattimento culturale e sociale." img="prova3" />
+                        <Card type="simple" icon="lux" iconclassName="w-[60px] h-[60px] fill-secundary hover:fill-primary duration-200" titolo="Aggreghiamo le idee" sottotitolo="Rileviamo le istanze dei giovani del territorio per affrontare l’appiattimento culturale e sociale." img="prova3" />
                     </div>
                     <div>
-                        <Card type="simple" icon="plus" iconClass="w-[60px] h-[60px] fill-secundary hover:fill-primary duration-200" titolo="Creiamo e sviluppiamo le imprese" sottotitolo="Supportiamo le imprese e gli aspiranti imprenditori nella realizzazione degli investimenti e nel posizionamento di mercato" />
+                        <Card type="simple" icon="plus" iconclassName="w-[60px] h-[60px] fill-secundary hover:fill-primary duration-200" titolo="Creiamo e sviluppiamo le imprese" sottotitolo="Supportiamo le imprese e gli aspiranti imprenditori nella realizzazione degli investimenti e nel posizionamento di mercato" />
                     </div>
                     <div>
-                        <Card type="simple" icon="doc" iconClass="w-[60px] h-[60px] fill-secundary hover:fill-primary duration-200" titolo="Facilitiamo le relazioni" sottotitolo="Interloquiamo con le istituzioni e gli operatori economici per facilitare partnership vincenti" img="prova2" />
+                        <Card type="simple" icon="doc" iconclassName="w-[60px] h-[60px] fill-secundary hover:fill-primary duration-200" titolo="Facilitiamo le relazioni" sottotitolo="Interloquiamo con le istituzioni e gli operatori economici per facilitare partnership vincenti" img="prova2" />
                     </div>
                     <div >
-                        <Card type="simple" icon="aereo" iconClass="w-[60px] h-[60px] fill-secundary hover:fill-primary duration-200" titolo="Alteriamo la reatà" sottotitolo="Valorizziamo le idee generando nuove realtà capaci di alterare il territorio aumentandone le capabilities" img="prova4" />
+                        <Card type="simple" icon="aereo" iconclassName="w-[60px] h-[60px] fill-secundary hover:fill-primary duration-200" titolo="Alteriamo la reatà" sottotitolo="Valorizziamo le idee generando nuove realtà capaci di alterare il territorio aumentandone le capabilities" img="prova4" />
                     </div>
                 </div>
             </div>
+
             <div className="bg-slide-img bg-cover relative text-white">
                 <div className="absolute bg-[#1E4589] h-[100px] w-full top-0 opacity-40">
                 </div>
@@ -79,25 +93,25 @@ export default function Home(props) {
                     </div>
                 </div>
             </div>
+
             <Contatti />
+
             <div className="py-[100px]">
                 <TitleAndSubtitle titolo_normal="News & " titolo_light="Update" sottotitolo="Contributi e finanziamenti, consigli di marketing e tutto ciò che devi sapere per migliorare la tua impresa. <br /> Selezioniamo news e contenuti che contano davvero per aiutarti a sfruttare le ultime opportunità!" />
                 <div className="pb-10">
                     <Divider />
                 </div>
                 <div className="container mx-auto">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"> {
-
-                        props.news.map((article, index) => (
-                            <>
-                                <NewsCard id={article.id} key={index} titolo={article.title.rendered} sottotitolo={article.excerpt.rendered} img={article.featured_image_src} data={article.date} />
-                            </>
-                        ))
-                    }
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"> 
+                      {
+                        news.map( (post,i) => <NewsCard { ...post } key={'post' + i} /> )
+                      }
                     </div>
                 </div>
             </div>
+
             <Footer />
+
         </div>
     );
 }
@@ -105,12 +119,8 @@ export default function Home(props) {
 
 
 
-export const getStaticProps = async () => {
+// export async function getStaticProps(context) {
 
-    const allNews = await fetch(process.env.NEXT_PUBLIC_API_URL + '/posts').then(r => r.json())
-    return {
-        props: {
-            news: allNews,
-        }
-    }
-}
+//   const news = await getPosts();
+//   return { props: { news } }
+// }

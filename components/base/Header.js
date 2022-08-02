@@ -20,7 +20,7 @@ function MobileNav({ open, setOpen }) {
                 {" "}
                 {/*logo container*/}
                 <Link legacyBehavior className="text-xl" href="/">
-                <a className={`text-2xl md:text-[35px] font-bold `}><img src="/images/logo.png" width="150px" /></a>
+                <a className={`text-2xl md:text-[35px] font-bold `}><picture><img src="/images/logo.png" width="150px" /></picture></a>
                 </Link>
             </div>
             <div className="flex text-[#001d4f] flex-col ml-4 pt-5 text-[25px]">
@@ -82,7 +82,7 @@ export default function Header(props) {
                 <MobileNav open={open} setOpen={setOpen} />
                 <div className="w-3/12 flex items-center">
                     <Link legacyBehavior href="/">
-                        <a className={`text-2xl md:text-[35px] font-bold `}><img src={scrollY > 0 ? "/images/logo-white.png" : "/images/logo-white.png"} width="200px" /></a>
+                        <a className={`text-2xl md:text-[35px] font-bold `}><picture><img src={scrollY > 0 ? "/images/logo-white.png" : "/images/logo-white.png"} width="200px" /></picture></a>
                     </Link>
                 </div>
                 <div className="w-9/12 flex justify-end items-center">

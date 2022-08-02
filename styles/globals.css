@@ -425,38 +425,3 @@ p {
   max-width: unset !important;
 }
 
-@media only screen and (max-width: 800px) {
-  .main-category {
-    flex-direction: column;
-  }
-
-  #articolo {
-    margin: auto !important;
-    max-width: 450px;
-  }
-  .category {
-    padding-bottom: 80px;
-  }
-  .container_index {
-    margin-top: 80px;
-  }
-  .container_index input {
-    width: 100%;
-  }
-
-  .edited {
-    margin-top: 20px;
-  }
-
-  .category .article .anteprima {
-    min-width: unset;
-  }
-}
-
-@media only screen and (max-width: 1100px) {
-  .container_index {
-    height: auto;
-    position: unset;
-    margin: 0;
-  }
-}
