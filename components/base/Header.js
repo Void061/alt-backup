@@ -61,6 +61,7 @@ function MobileNav({ open, setOpen }) {
 
 export default function Header(props) {
     const position = props.position == "fixed" ? true : false;
+    const activeBg = props.activeBg;
     const [scrollY, setScrollY] = useState(0);
     useEffect(() => {
         const handleScroll = () => {
@@ -76,13 +77,13 @@ export default function Header(props) {
     const [open, setOpen] = useState(false);
     return (
         <nav
-            className={`flex filter ${position ? "position-fixed" : ""} drop-shadow-md ${scrollY > 0 ? "bg-primary" : "bg-none"} px-4 py-4 h-20 items-center `}
+            className={`flex filter ${position ? "position-fixed" : ""} drop-shadow-md ${scrollY || activeBg > 0 ? "bg-primary" : "bg-none"} px-4 py-4 h-20 items-center `}
         >
             <div className="container mx-auto flex">
                 <MobileNav open={open} setOpen={setOpen} />
                 <div className="w-3/12 flex items-center">
                     <Link legacyBehavior href="/">
-                        <a className={`text-2xl md:text-[35px] font-bold `}><picture><img src={scrollY > 0 ? "/images/logo-white.png" : "/images/logo-white.png"} width="200px" /></picture></a>
+                        <a className={`text-2xl md:text-[35px] font-bold `}><picture><img src={scrollY > 0 ? "/images/logo-white.png" : "/images/logo-white.png"} width="150px" /></picture></a>
                     </Link>
                 </div>
                 <div className="w-9/12 flex justify-end items-center">
@@ -107,7 +108,7 @@ export default function Header(props) {
                         />
                     </div>
 
-                    <div className={`hidden md:flex  d-flex items-center text-[18px]  `}>
+                    <div className={`hidden md:flex  d-flex items-center text-[15px]  `}>
                         {props.Home ? <NavLink to="#about">Chi siamo</NavLink> : <NavLink to="/#about">Chi siamo</NavLink>}
                         {props.Home ? <NavLink to="#services">Servizi</NavLink> : <NavLink to="/#services">Servizi</NavLink>}
                         <NavLink to="/category">Blog</NavLink>

@@ -14,14 +14,14 @@ export default function Card(props) {
     }
     else if (props.type == "services") {
         return (
-            <div className="duration-200 container md:p-5">
-                <div className="mx-auto card-icon-cont py-5 xl:py-10 px-0 flex flex-col items-start content-center justify-center ">
+            <div className="duration-200">
+                <div className="mx-auto card-icon-cont group  py-5 xl:py-10 px-0 flex flex-col items-start content-center justify-center ">
                     <div className="pb-[0px] xl:pb-5 relative">
                         <picture>
-                          <img className="rounded-[25px]" src={`/images/${props.img}.png`} />
+                          <img className="rounded-[25px]" src={`/images/${props.img}.jpg`} />
                         </picture>
-                        <div className="absolute bottom-[-20px] md:bottom-[-10px] xl:bottom-0 right-[50px]">
-                            <Icon name="arrow-right" css="card-icon-white stroke-1 stroke-[#00ccf6] w-10 h-10" />
+                        <div className="absolute bottom-[-20px] md:bottom-[-10px] left-3 top-3">
+                            <Icon name="arrow-right" css="rotate-90 transition-all group-hover:rotate-0 stroke-2 stroke-[#00ccf6] group-hover:stroke-[#fff] w-8 h-8" />
                         </div>
                     </div>
                     <h5 className="text-[30px] md:text-[25px] mt-10 md:mt-2 pb-2">{props.titolo}</h5>

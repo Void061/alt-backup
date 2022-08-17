@@ -1,14 +1,14 @@
 import '../styles/globals.css';
-import Head from 'next/head';
+import Seo from '../components/base/Seo';
 
 
 function MyApp({ Component, pageProps }) {
   return <>
-    <Head>
-      <link rel="icon" href="images/favicon.png" />
-    </Head>
+  <Seo />
     <Component {...pageProps} />
   </>
 }
+
+
 
 export default MyApp

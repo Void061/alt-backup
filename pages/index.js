@@ -37,16 +37,16 @@ export default function Home(props) {
                 <Divider />
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
                     <div>
-                        <Card type="simple" icon="lux" iconclassName="w-[60px] h-[60px] fill-secundary hover:fill-primary duration-200" titolo="Aggreghiamo le idee" sottotitolo="Rileviamo le istanze dei giovani del territorio per affrontare l’appiattimento culturale e sociale." img="prova3" />
+                        <Card type="simple" icon="lux" iconClass="w-[60px] h-[60px] fill-secundary hover:fill-primary duration-200" titolo="Aggreghiamo le idee" sottotitolo="Rileviamo le istanze dei giovani del territorio per affrontare l’appiattimento culturale e sociale." img="prova3" />
                     </div>
                     <div>
-                        <Card type="simple" icon="plus" iconclassName="w-[60px] h-[60px] fill-secundary hover:fill-primary duration-200" titolo="Creiamo e sviluppiamo le imprese" sottotitolo="Supportiamo le imprese e gli aspiranti imprenditori nella realizzazione degli investimenti e nel posizionamento di mercato" />
+                        <Card type="simple" icon="plus" iconClass="w-[60px] h-[60px] fill-secundary hover:fill-primary duration-200" titolo="Creiamo e sviluppiamo le imprese" sottotitolo="Supportiamo le imprese e gli aspiranti imprenditori nella realizzazione degli investimenti e nel posizionamento di mercato" />
                     </div>
                     <div>
-                        <Card type="simple" icon="doc" iconclassName="w-[60px] h-[60px] fill-secundary hover:fill-primary duration-200" titolo="Facilitiamo le relazioni" sottotitolo="Interloquiamo con le istituzioni e gli operatori economici per facilitare partnership vincenti" img="prova2" />
+                        <Card type="simple" icon="doc" iconClass="w-[60px] h-[60px] fill-secundary hover:fill-primary duration-200" titolo="Facilitiamo le relazioni" sottotitolo="Interloquiamo con le istituzioni e gli operatori economici per facilitare partnership vincenti" img="prova2" />
                     </div>
                     <div >
-                        <Card type="simple" icon="aereo" iconclassName="w-[60px] h-[60px] fill-secundary hover:fill-primary duration-200" titolo="Alteriamo la reatà" sottotitolo="Valorizziamo le idee generando nuove realtà capaci di alterare il territorio aumentandone le capabilities" img="prova4" />
+                        <Card type="simple" icon="aereo" iconClass="w-[60px] h-[60px] fill-secundary hover:fill-primary duration-200" titolo="Alteriamo la reatà" sottotitolo="Valorizziamo le idee generando nuove realtà capaci di alterare il territorio aumentandone le capabilities" img="prova4" />
                     </div>
                 </div>
             </div>
@@ -78,18 +78,18 @@ export default function Home(props) {
             <div id="services" className="container mt-5 mx-auto py-[100px]">
                 <TitleAndSubtitle titolo_normal="Professional " titolo_light="Experience" sottotitolo="Offriamo una consulenza trasversale per l&apos;avvio, lo sviluppo e la diversificazione d&apos;impresa. Supportiamo imprenditori e aspiranti tali nel loro percorso verso l&apos;autorealizzazione." />
                 <Divider />
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10">
                     <div>
-                        <Card type="services" titolo="Consulenza strategica" sottotitolo="Costruiamo e sviluppiamo business valutando la fattibilità degli investimenti" img="prova" />
+                        <Card type="services" titolo="Consulenza strategica" sottotitolo="Costruiamo e sviluppiamo business valutando la fattibilità degli investimenti" img="consulenza" />
                     </div>
                     <div className="xl:mt-12">
-                        <Card type="services" titolo="Finanza agevolata" sottotitolo="Ricerchiamo agevolazioni per la nascita e lo sviluppo delle imprese" img="prova2" />
+                        <Card type="services" titolo="Finanza agevolata" sottotitolo="Ricerchiamo agevolazioni per la nascita e lo sviluppo delle imprese" img="finanza-agevolata" />
                     </div>
                     <div>
-                        <Card type="services" titolo="Marketing e comunicazione" sottotitolo="Sviluppiamo la Brand Identity e miglioriamo il posizionamento sul mercato" img="prova3" />
+                        <Card type="services" titolo="Marketing e comunicazione" sottotitolo="Sviluppiamo la Brand Identity e miglioriamo il posizionamento sul mercato" img="marketing" />
                     </div>
                     <div className="xl:mt-12">
-                        <Card type="services" titolo="Technology Development" sottotitolo="Progettiamo siti web, software gestionali, e soluzioni innovative Web 3.0" img="prova4" />
+                        <Card type="services" titolo="Technology Development" sottotitolo="Progettiamo siti web, software gestionali, e soluzioni innovative Web 3.0" img="development" />
                     </div>
                 </div>
             </div>
@@ -102,7 +102,7 @@ export default function Home(props) {
                     <Divider />
                 </div>
                 <div className="container mx-auto">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"> 
+                    <div className="grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"> 
                       {
                         news.map( (post,i) => <NewsCard { ...post } key={'post' + i} /> )
                       }
